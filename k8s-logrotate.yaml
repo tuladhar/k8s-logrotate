@@ -1,0 +1,6 @@
+- name: K8s Logrotate
+  hosts: all
+  gather_facts: true
+  become: yes
+  roles:
+    - k8s-logrotate
