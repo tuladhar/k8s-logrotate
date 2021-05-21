@@ -1,0 +1,17 @@
+---
+- name: Install packages
+  yum:
+    name:
+      - logrotate
+    state: present
+
+- name: Configure logrotate for K8s logs
+  copy:
+    src: "{{ item }}"
+    dest: /etc/logrotate.d/
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - logrotate.d/allcontainerlogs
+    - logrotate.d/allpodlogs
