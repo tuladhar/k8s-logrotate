@@ -1,11 +1,11 @@
 # k8s-logrotate
-Ansible playbook to setup logrotate for on-prem Kubernetes master/worker nodes.
+An ansible playbook to setup periodic logrotate for your on-prem Kubernetes master/worker nodes to cleanup the container and pods logs to free up the disk space.
 
-## Usage
+## Quickstart
 
-Step 1. Create hosts inventory with your K8s nodes
+### Step 1. Create hosts inventory with your K8s nodes
 
-File: hosts.ini
+*File: hosts.ini*
 ```
 [k8s-nodes]
 k8s-worker-1 10.0.0.1
@@ -13,12 +13,12 @@ k8s-worker-2 10.0.0.2
 k8s-worker-2 10.0.1.3
 ```
 
-Step 2. Run the ansible playbook
+### Step 2. Run the ansible playbook
 ```
 $ ansible-playbook -i hosts.ini k8s-logrotate.yaml
 ```
 
-Step 3. Verify the logrotate files
+### Step 3. Verify the logrotate files
 ```
 $ cd /etc/logrotate.d
 $ ls -lh
