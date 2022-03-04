@@ -1,5 +1,5 @@
 /var/log/pods/*/*.log {
-    rotate 5
+    rotate 3
     copytruncate
     missingok
     notifempty
